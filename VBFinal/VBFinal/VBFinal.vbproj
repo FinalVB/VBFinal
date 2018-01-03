@@ -134,6 +134,21 @@
   <ItemGroup>
     <None Include="Resources\TurtleGames.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coin point.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key for plains.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plains door.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plains level.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spike.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
