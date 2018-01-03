@@ -106,6 +106,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Level1.resx">
+      <DependentUpon>Level1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LevelSelect.resx">
       <DependentUpon>LevelSelect.vb</DependentUpon>
     </EmbeddedResource>
