@@ -25,8 +25,8 @@ Partial Class LevelSelect
         Me.btnLevel1 = New System.Windows.Forms.Button()
         Me.btnLevel2 = New System.Windows.Forms.Button()
         Me.btnLevel3 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblCoinNumber = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLevel1
@@ -56,43 +56,33 @@ Partial Class LevelSelect
         Me.btnLevel3.Text = "Level 3"
         Me.btnLevel3.UseVisualStyleBackColor = True
         '
-        'Label1
+        'PictureBox1
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(23, 194)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(36, 13)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Coins:"
-        '
-        'lblCoinNumber
-        '
-        Me.lblCoinNumber.AutoSize = True
-        Me.lblCoinNumber.Location = New System.Drawing.Point(65, 194)
-        Me.lblCoinNumber.Name = "lblCoinNumber"
-        Me.lblCoinNumber.Size = New System.Drawing.Size(13, 13)
-        Me.lblCoinNumber.TabIndex = 4
-        Me.lblCoinNumber.Text = "="
+        Me.PictureBox1.Image = Global.VBFinal.My.Resources.Resources.coin_point
+        Me.PictureBox1.Location = New System.Drawing.Point(27, 173)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 42)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 11
+        Me.PictureBox1.TabStop = False
         '
         'LevelSelect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(343, 227)
-        Me.Controls.Add(Me.lblCoinNumber)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLevel3)
         Me.Controls.Add(Me.btnLevel2)
         Me.Controls.Add(Me.btnLevel1)
         Me.Name = "LevelSelect"
         Me.Text = "LevelSelect"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnLevel1 As System.Windows.Forms.Button
     Friend WithEvents btnLevel2 As System.Windows.Forms.Button
     Friend WithEvents btnLevel3 As System.Windows.Forms.Button
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents lblCoinNumber As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
