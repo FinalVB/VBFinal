@@ -76,6 +76,12 @@
     <Compile Include="Level1.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="level2.Designer.vb">
+      <DependentUpon>level2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="level2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
