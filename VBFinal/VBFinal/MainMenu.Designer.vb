@@ -28,6 +28,7 @@ Partial Class MainMenu
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.picTurtleGames = New System.Windows.Forms.PictureBox()
+        Me.lblName = New System.Windows.Forms.Label()
         CType(Me.picTurtleGames, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -46,7 +47,7 @@ Partial Class MainMenu
         '
         'btnStart
         '
-        Me.btnStart.Location = New System.Drawing.Point(180, 81)
+        Me.btnStart.Location = New System.Drawing.Point(168, 98)
         Me.btnStart.Name = "btnStart"
         Me.btnStart.Size = New System.Drawing.Size(97, 34)
         Me.btnStart.TabIndex = 2
@@ -56,7 +57,7 @@ Partial Class MainMenu
         '
         'btnExit
         '
-        Me.btnExit.Location = New System.Drawing.Point(180, 144)
+        Me.btnExit.Location = New System.Drawing.Point(168, 161)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(97, 34)
         Me.btnExit.TabIndex = 3
@@ -74,11 +75,23 @@ Partial Class MainMenu
         Me.picTurtleGames.TabIndex = 0
         Me.picTurtleGames.TabStop = False
         '
+        'lblName
+        '
+        Me.lblName.AutoSize = True
+        Me.lblName.Font = New System.Drawing.Font("Rage Italic", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(55, 9)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(330, 61)
+        Me.lblName.TabIndex = 4
+        Me.lblName.Text = "Simple Platform"
+        Me.lblName.Visible = False
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(429, 345)
+        Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnStart)
         Me.Controls.Add(Me.lblTurtleGames)
@@ -95,5 +108,6 @@ Partial Class MainMenu
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents btnStart As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
+    Friend WithEvents lblName As System.Windows.Forms.Label
 
 End Class
