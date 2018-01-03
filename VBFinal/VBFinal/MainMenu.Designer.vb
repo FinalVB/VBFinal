@@ -23,23 +23,13 @@ Partial Class MainMenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.picTurtleGames = New System.Windows.Forms.PictureBox()
         Me.lblTurtleGames = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.btnStart = New System.Windows.Forms.Button()
         Me.btnExit = New System.Windows.Forms.Button()
+        Me.picTurtleGames = New System.Windows.Forms.PictureBox()
         CType(Me.picTurtleGames, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'picTurtleGames
-        '
-        Me.picTurtleGames.Image = Global.VBFinal.My.Resources.Resources.TurtleGames
-        Me.picTurtleGames.Location = New System.Drawing.Point(79, 30)
-        Me.picTurtleGames.Name = "picTurtleGames"
-        Me.picTurtleGames.Size = New System.Drawing.Size(281, 226)
-        Me.picTurtleGames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picTurtleGames.TabIndex = 0
-        Me.picTurtleGames.TabStop = False
         '
         'lblTurtleGames
         '
@@ -73,6 +63,16 @@ Partial Class MainMenu
         Me.btnExit.Text = "Exit"
         Me.btnExit.UseVisualStyleBackColor = True
         Me.btnExit.Visible = False
+        '
+        'picTurtleGames
+        '
+        Me.picTurtleGames.Image = Global.VBFinal.My.Resources.Resources.TurtleGames
+        Me.picTurtleGames.Location = New System.Drawing.Point(79, 30)
+        Me.picTurtleGames.Name = "picTurtleGames"
+        Me.picTurtleGames.Size = New System.Drawing.Size(281, 226)
+        Me.picTurtleGames.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picTurtleGames.TabIndex = 0
+        Me.picTurtleGames.TabStop = False
         '
         'MainMenu
         '
