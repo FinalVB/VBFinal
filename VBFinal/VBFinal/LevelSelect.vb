@@ -8,7 +8,7 @@
     Private Sub btnLevel1_Click(sender As Object, e As EventArgs) Handles btnLevel1.Click
         Dim Box As New Level1
         Box.Show()
-        ' Me.Close()
+        Me.Close()
 
     End Sub
 End Class

@@ -27,6 +27,6 @@
     Private Sub btnStart_Click(sender As Object, e As EventArgs) Handles btnStart.Click
         Dim Box As New LevelSelect
         Box.Show()
-        Me.Visible = False
+        'Me.Visible = False
     End Sub
 End Class
