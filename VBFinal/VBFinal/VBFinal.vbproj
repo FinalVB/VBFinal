@@ -82,6 +82,12 @@
     <Compile Include="level2.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="level3.Designer.vb">
+      <DependentUpon>level3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="level3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="level2.resx">
       <DependentUpon>level2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="level3.resx">
+      <DependentUpon>level3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LevelSelect.resx">
       <DependentUpon>LevelSelect.vb</DependentUpon>
