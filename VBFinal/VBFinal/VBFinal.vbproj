@@ -115,6 +115,9 @@
     <EmbeddedResource Include="Level1.resx">
       <DependentUpon>Level1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="level2.resx">
+      <DependentUpon>level2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LevelSelect.resx">
       <DependentUpon>LevelSelect.vb</DependentUpon>
     </EmbeddedResource>
