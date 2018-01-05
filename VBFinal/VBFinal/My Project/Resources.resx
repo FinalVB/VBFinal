@@ -121,6 +121,9 @@
   <data name="walk right" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\walk right.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="jump right" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\jump right.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="platform" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\platform.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,7 +148,7 @@
   <data name="plains door" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plains door.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="jump right" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\jump right.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Characters left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Characters left.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
