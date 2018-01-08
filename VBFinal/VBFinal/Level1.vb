@@ -128,13 +128,9 @@
 
 
     Dim Velocity As Integer = 20
-
-
-    Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
-        Me.Close()
-        Dim Box As New LevelSelect
-        Box.Show()
-    End Sub
+    Dim Gravity As Integer = 10
+    Dim Jumping As Boolean
+   
 
 
     Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick 'Move Right timer
@@ -146,13 +142,20 @@
     End Sub
 
     Private Sub Level1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
-        Select e.KeyCode
+        Select Case e.KeyCode
             Case Keys.Right
                 tmrRight.Start()
             Case Keys.Left
                 tmrLeft.Start()
+            Case Keys.Up
+                tmrUp.Start()
+                Jumping = True
+            Case Keys.Escape
+                Me.Close()
+                LevelSelect.Visible = True
         End Select
     End Sub
+
 
     Private Sub Level1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         Select Case e.KeyCode
@@ -160,7 +163,107 @@
                 tmrRight.Stop()
             Case Keys.Left
                 tmrLeft.Stop()
+            Case Keys.Up
+                tmrUp.Stop()
+                Jumping = False
         End Select
+    End Sub
+
+    Private Sub tmrUp_Tick(sender As Object, e As EventArgs) Handles tmrUp.Tick 'Jump timer
+        picPlayer.Top -= 30
+    End Sub
+
+    Private Sub tmrGravity_Tick(sender As Object, e As EventArgs) Handles tmrGravity.Tick 'Gravity timer
+        picPlayer.Top += Gravity
+    End Sub
+
+    Private Sub Level_1_Load(sender As Object, e As EventArgs) Handles Me.Load 'Game logic timer
+        tmrGame.Start()
+    End Sub
+
+
+    Private Sub tmrGameLogic_Tick(sender As Object, e As EventArgs) Handles tmrGame.Tick
+        If picPlayer.Bounds.IntersectsWith(picAir.Bounds) Then
+            tmrGravity.Start()
+            If Jumping = False Then
+                tmrGravity.Start()
+            End If
+        ElseIf picPlayer.Bounds.IntersectsWith(picGround.Bounds) Then
+            tmrGravity.Stop()
+        End If
+
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "platform" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
+                        tmrGravity.Stop()
+                    End If
+                End If
+            End If
+        Next
+
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "ground" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
+                        tmrGravity.Stop()
+                    End If
+                End If
+            End If
+        Next
+
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "LimitRight" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
+                        tmrRight.Stop()
+                    End If
+                End If
+            End If
+        Next
+
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "LimitLeft" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
+                        tmrLeft.Stop()
+                    End If
+                End If
+            End If
+        Next
+
+
+        Dim Coins() = {Coin0, Coin2, Coin1}
+        Dim CoinPoints As Integer
+        Dim Score As Integer
+
+      
+
+        For CoinPoints = 0 To 2
+            If picPlayer.Bounds.IntersectsWith(Coins(CoinPoints).Bounds) Then
+                If Coins(CoinPoints).Enabled = True Then
+                    Score += 1
+                    lblScore.Text = Score.ToString
+                End If
+                Coins(CoinPoints).Hide()
+                Coins(CoinPoints).Enabled = False
+            End If
+        Next
+
+
+        If picPlayer.Bounds.IntersectsWith(picKey.Bounds) Then
+            picGoal.Visible = True
+            picKey.Hide()
+            picKey.Enabled = False
+        End If
+
+
+        If picPlayer.Bounds.IntersectsWith(picGoal.Bounds) Then
+            Me.Close()
+            LevelSelect.Visible = True
+            level2.Visible = True
+        End If
+
     End Sub
 
 End Class
