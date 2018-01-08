@@ -30,17 +30,14 @@ Partial Class Level1
         Me.tmrCMA = New System.Windows.Forms.Timer(Me.components)
         Me.tmrGame = New System.Windows.Forms.Timer(Me.components)
         Me.picPlayerLeft = New System.Windows.Forms.PictureBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.picGoal = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.picLimitRight = New System.Windows.Forms.PictureBox()
         Me.picLimitLeft = New System.Windows.Forms.PictureBox()
         Me.picGround = New System.Windows.Forms.PictureBox()
         Me.picPlayer = New System.Windows.Forms.PictureBox()
-        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.Coin0 = New System.Windows.Forms.PictureBox()
+        Me.picKey = New System.Windows.Forms.PictureBox()
         Me.PictureBox17 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
@@ -51,18 +48,18 @@ Partial Class Level1
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.picAir = New System.Windows.Forms.PictureBox()
+        Me.lblScore = New System.Windows.Forms.Label()
+        Me.Coin1 = New System.Windows.Forms.PictureBox()
+        Me.Coin2 = New System.Windows.Forms.PictureBox()
         CType(Me.picPlayerLeft, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picGoal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLimitLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picGround, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Coin0, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picKey, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +70,8 @@ Partial Class Level1
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAir, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Coin1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Coin2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrRight
@@ -96,22 +95,23 @@ Partial Class Level1
         'picPlayerLeft
         '
         Me.picPlayerLeft.Image = Global.VBFinal.My.Resources.Resources.Characters_left
-        Me.picPlayerLeft.Location = New System.Drawing.Point(14, 317)
+        Me.picPlayerLeft.Location = New System.Drawing.Point(25, 317)
         Me.picPlayerLeft.Name = "picPlayerLeft"
         Me.picPlayerLeft.Size = New System.Drawing.Size(36, 37)
         Me.picPlayerLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picPlayerLeft.TabIndex = 28
         Me.picPlayerLeft.TabStop = False
         '
-        'PictureBox11
+        'picGoal
         '
-        Me.PictureBox11.Image = Global.VBFinal.My.Resources.Resources.plains_door
-        Me.PictureBox11.Location = New System.Drawing.Point(36, 26)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(48, 50)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 10
-        Me.PictureBox11.TabStop = False
+        Me.picGoal.Image = Global.VBFinal.My.Resources.Resources.plains_door
+        Me.picGoal.Location = New System.Drawing.Point(36, 26)
+        Me.picGoal.Name = "picGoal"
+        Me.picGoal.Size = New System.Drawing.Size(48, 50)
+        Me.picGoal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picGoal.TabIndex = 10
+        Me.picGoal.TabStop = False
+        Me.picGoal.Visible = False
         '
         'PictureBox1
         '
@@ -127,12 +127,12 @@ Partial Class Level1
         'picLimitRight
         '
         Me.picLimitRight.BackColor = System.Drawing.Color.Transparent
-        Me.picLimitRight.Location = New System.Drawing.Point(683, -1)
+        Me.picLimitRight.Location = New System.Drawing.Point(716, -6)
         Me.picLimitRight.Name = "picLimitRight"
-        Me.picLimitRight.Size = New System.Drawing.Size(10, 475)
+        Me.picLimitRight.Size = New System.Drawing.Size(10, 493)
         Me.picLimitRight.TabIndex = 23
         Me.picLimitRight.TabStop = False
-        Me.picLimitRight.Tag = "bound"
+        Me.picLimitRight.Tag = "LimitRight"
         '
         'picLimitLeft
         '
@@ -142,77 +142,48 @@ Partial Class Level1
         Me.picLimitLeft.Size = New System.Drawing.Size(10, 475)
         Me.picLimitLeft.TabIndex = 22
         Me.picLimitLeft.TabStop = False
-        Me.picLimitLeft.Tag = "bound"
+        Me.picLimitLeft.Tag = "LimitLeft"
         '
         'picGround
         '
         Me.picGround.BackColor = System.Drawing.Color.Transparent
         Me.picGround.Location = New System.Drawing.Point(0, 377)
         Me.picGround.Name = "picGround"
-        Me.picGround.Size = New System.Drawing.Size(696, 10)
+        Me.picGround.Size = New System.Drawing.Size(726, 11)
         Me.picGround.TabIndex = 21
         Me.picGround.TabStop = False
-        Me.picGround.Tag = "bound"
+        Me.picGround.Tag = "ground"
         '
         'picPlayer
         '
         Me.picPlayer.Image = Global.VBFinal.My.Resources.Resources.Characters
-        Me.picPlayer.Location = New System.Drawing.Point(14, 317)
+        Me.picPlayer.Location = New System.Drawing.Point(25, 317)
         Me.picPlayer.Name = "picPlayer"
         Me.picPlayer.Size = New System.Drawing.Size(36, 37)
         Me.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picPlayer.TabIndex = 17
         Me.picPlayer.TabStop = False
         '
-        'PictureBox16
+        'Coin0
         '
-        Me.PictureBox16.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox16.Location = New System.Drawing.Point(732, -1)
-        Me.PictureBox16.Name = "PictureBox16"
-        Me.PictureBox16.Size = New System.Drawing.Size(36, 33)
-        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox16.TabIndex = 16
-        Me.PictureBox16.TabStop = False
+        Me.Coin0.Image = Global.VBFinal.My.Resources.Resources.coin_point
+        Me.Coin0.Location = New System.Drawing.Point(209, 286)
+        Me.Coin0.Name = "Coin0"
+        Me.Coin0.Size = New System.Drawing.Size(33, 25)
+        Me.Coin0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Coin0.TabIndex = 14
+        Me.Coin0.TabStop = False
+        Me.Coin0.Tag = "coin"
         '
-        'PictureBox15
+        'picKey
         '
-        Me.PictureBox15.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox15.Location = New System.Drawing.Point(185, 286)
-        Me.PictureBox15.Name = "PictureBox15"
-        Me.PictureBox15.Size = New System.Drawing.Size(33, 25)
-        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox15.TabIndex = 14
-        Me.PictureBox15.TabStop = False
-        '
-        'PictureBox14
-        '
-        Me.PictureBox14.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox14.Location = New System.Drawing.Point(630, 190)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(33, 25)
-        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox14.TabIndex = 13
-        Me.PictureBox14.TabStop = False
-        '
-        'PictureBox13
-        '
-        Me.PictureBox13.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox13.Location = New System.Drawing.Point(337, 111)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(33, 25)
-        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox13.TabIndex = 12
-        Me.PictureBox13.TabStop = False
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.Image = Global.VBFinal.My.Resources.Resources.key_for_plains
-        Me.PictureBox12.Location = New System.Drawing.Point(113, 142)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(26, 50)
-        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox12.TabIndex = 11
-        Me.PictureBox12.TabStop = False
+        Me.picKey.Image = Global.VBFinal.My.Resources.Resources.key_for_plains
+        Me.picKey.Location = New System.Drawing.Point(113, 142)
+        Me.picKey.Name = "picKey"
+        Me.picKey.Size = New System.Drawing.Size(26, 50)
+        Me.picKey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picKey.TabIndex = 11
+        Me.picKey.TabStop = False
         '
         'PictureBox17
         '
@@ -228,7 +199,7 @@ Partial Class Level1
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox2.Location = New System.Drawing.Point(173, 317)
+        Me.PictureBox2.Location = New System.Drawing.Point(185, 317)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -239,7 +210,7 @@ Partial Class Level1
         'PictureBox10
         '
         Me.PictureBox10.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox10.Location = New System.Drawing.Point(145, 88)
+        Me.PictureBox10.Location = New System.Drawing.Point(185, 72)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -250,7 +221,7 @@ Partial Class Level1
         'PictureBox9
         '
         Me.PictureBox9.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox9.Location = New System.Drawing.Point(290, 142)
+        Me.PictureBox9.Location = New System.Drawing.Point(303, 129)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -261,7 +232,7 @@ Partial Class Level1
         'PictureBox8
         '
         Me.PictureBox8.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox8.Location = New System.Drawing.Point(469, 153)
+        Me.PictureBox8.Location = New System.Drawing.Point(458, 142)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -283,7 +254,7 @@ Partial Class Level1
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox5.Location = New System.Drawing.Point(303, 272)
+        Me.PictureBox5.Location = New System.Drawing.Point(326, 238)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -294,7 +265,7 @@ Partial Class Level1
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox4.Location = New System.Drawing.Point(437, 248)
+        Me.PictureBox4.Location = New System.Drawing.Point(481, 260)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -305,7 +276,7 @@ Partial Class Level1
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox3.Location = New System.Drawing.Point(573, 222)
+        Me.PictureBox3.Location = New System.Drawing.Point(606, 209)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -316,13 +287,46 @@ Partial Class Level1
         'picAir
         '
         Me.picAir.Image = Global.VBFinal.My.Resources.Resources.plains_level
-        Me.picAir.Location = New System.Drawing.Point(0, -1)
+        Me.picAir.Location = New System.Drawing.Point(0, -4)
         Me.picAir.Name = "picAir"
-        Me.picAir.Size = New System.Drawing.Size(759, 469)
+        Me.picAir.Size = New System.Drawing.Size(781, 475)
         Me.picAir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picAir.TabIndex = 0
         Me.picAir.TabStop = False
         Me.picAir.Tag = "limitedLeft"
+        '
+        'lblScore
+        '
+        Me.lblScore.BackColor = System.Drawing.Color.Teal
+        Me.lblScore.Font = New System.Drawing.Font("Viner Hand ITC", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblScore.ForeColor = System.Drawing.Color.Yellow
+        Me.lblScore.Location = New System.Drawing.Point(733, 9)
+        Me.lblScore.Name = "lblScore"
+        Me.lblScore.Size = New System.Drawing.Size(35, 46)
+        Me.lblScore.TabIndex = 29
+        Me.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Coin1
+        '
+        Me.Coin1.Image = Global.VBFinal.My.Resources.Resources.coin_point
+        Me.Coin1.Location = New System.Drawing.Point(665, 178)
+        Me.Coin1.Name = "Coin1"
+        Me.Coin1.Size = New System.Drawing.Size(33, 25)
+        Me.Coin1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Coin1.TabIndex = 30
+        Me.Coin1.TabStop = False
+        Me.Coin1.Tag = "coin"
+        '
+        'Coin2
+        '
+        Me.Coin2.Image = Global.VBFinal.My.Resources.Resources.coin_point
+        Me.Coin2.Location = New System.Drawing.Point(493, 111)
+        Me.Coin2.Name = "Coin2"
+        Me.Coin2.Size = New System.Drawing.Size(33, 25)
+        Me.Coin2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Coin2.TabIndex = 31
+        Me.Coin2.TabStop = False
+        Me.Coin2.Tag = "coin"
         '
         'Level1
         '
@@ -330,17 +334,14 @@ Partial Class Level1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(780, 468)
         Me.Controls.Add(Me.picPlayer)
+        Me.Controls.Add(Me.Coin2)
+        Me.Controls.Add(Me.Coin1)
+        Me.Controls.Add(Me.lblScore)
         Me.Controls.Add(Me.picPlayerLeft)
-        Me.Controls.Add(Me.PictureBox11)
+        Me.Controls.Add(Me.picGoal)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.picLimitRight)
-        Me.Controls.Add(Me.picLimitLeft)
-        Me.Controls.Add(Me.picGround)
-        Me.Controls.Add(Me.PictureBox16)
-        Me.Controls.Add(Me.PictureBox15)
-        Me.Controls.Add(Me.PictureBox14)
-        Me.Controls.Add(Me.PictureBox13)
-        Me.Controls.Add(Me.PictureBox12)
+        Me.Controls.Add(Me.Coin0)
+        Me.Controls.Add(Me.picKey)
         Me.Controls.Add(Me.PictureBox17)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.PictureBox10)
@@ -351,20 +352,20 @@ Partial Class Level1
         Me.Controls.Add(Me.PictureBox4)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.picAir)
+        Me.Controls.Add(Me.picGround)
+        Me.Controls.Add(Me.picLimitRight)
+        Me.Controls.Add(Me.picLimitLeft)
         Me.Name = "Level1"
         Me.Text = "Level1"
         CType(Me.picPlayerLeft, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picGoal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLimitLeft, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picGround, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Coin0, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picKey, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -375,6 +376,8 @@ Partial Class Level1
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAir, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Coin1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Coin2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -387,12 +390,9 @@ Partial Class Level1
     Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox11 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox12 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox13 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox14 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox15 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox16 As System.Windows.Forms.PictureBox
+    Friend WithEvents picGoal As System.Windows.Forms.PictureBox
+    Friend WithEvents picKey As System.Windows.Forms.PictureBox
+    Friend WithEvents Coin0 As System.Windows.Forms.PictureBox
     Friend WithEvents picPlayer As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox17 As System.Windows.Forms.PictureBox
     Friend WithEvents tmrRight As System.Windows.Forms.Timer
@@ -406,4 +406,7 @@ Partial Class Level1
     Friend WithEvents tmrGame As System.Windows.Forms.Timer
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents picPlayerLeft As System.Windows.Forms.PictureBox
+    Friend WithEvents lblScore As System.Windows.Forms.Label
+    Friend WithEvents Coin1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Coin2 As System.Windows.Forms.PictureBox
 End Class
