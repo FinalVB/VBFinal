@@ -6,11 +6,11 @@ This is a platformer game.Levels will get harder the further you go.You collect 
 
 You can get this off of the repository the having visual studio 2013 downloaded
 
-Built with
+#### Built with
 
 Visual Studio 2013
 
-Authors
+#### Authors
 
 Adam Burton - Level Design
 
