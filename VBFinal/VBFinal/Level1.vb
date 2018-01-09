@@ -134,7 +134,6 @@
         If picPlayer.Bounds.IntersectsWith(picGoal.Bounds) Then
             If DoorKey = 0 And picGoal.Enabled = True Then
                 Me.Close()
-                LevelSelect.Visible = True
                 level2.Visible = True
             End If
         End If

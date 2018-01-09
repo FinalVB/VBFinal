@@ -5,15 +5,15 @@
     Dim Score As Integer
     Dim DoorKey As Integer
 
-    Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick 'Move Right timer
+    Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick     'Move Right timer
         picPlayer.Left += Velocity
     End Sub
 
-    Private Sub tmrLeft_Tick(sender As Object, e As EventArgs) Handles tmrLeft.Tick 'Move Left timer
+    Private Sub tmrLeft_Tick(sender As Object, e As EventArgs) Handles tmrLeft.Tick  'Move Left timer
         picPlayer.Left -= Velocity
     End Sub
 
-    Private Sub Level1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown 'Keys to move
+    Private Sub Level2_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown      'Keys to move
         Select Case e.KeyCode
             Case Keys.Right
                 tmrRight.Start()
@@ -31,7 +31,7 @@
     End Sub
 
 
-    Private Sub Level1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp 'Keys to stop moveing
+    Private Sub Level2_KeyUp(sender As Object, e As KeyEventArgs) Handles MyBase.KeyUp      'Keys to stop moveing
         Select Case e.KeyCode
             Case Keys.Right
                 tmrRight.Stop()
@@ -43,15 +43,15 @@
         End Select
     End Sub
 
-    Private Sub tmrUp_Tick(sender As Object, e As EventArgs) Handles tmrUp.Tick 'Jump timer
+    Private Sub tmrUp_Tick(sender As Object, e As EventArgs) Handles tmrUp.Tick  'Jump timer
         picPlayer.Top -= 30
     End Sub
 
-    Private Sub tmrGravity_Tick(sender As Object, e As EventArgs) Handles tmrGravity.Tick 'Gravity timer
+    Private Sub tmrGravity_Tick(sender As Object, e As EventArgs) Handles tmrGravity.Tick  'Gravity timer
         picPlayer.Top += Gravity
     End Sub
 
-    Private Sub Level_1_Load(sender As Object, e As EventArgs) Handles Me.Load 'Game logic timer
+    Private Sub Level_2_Load(sender As Object, e As EventArgs) Handles MyBase.Load      'Game logic timer
         tmrGame.Start()
     End Sub
 
@@ -134,11 +134,9 @@
         If picPlayer.Bounds.IntersectsWith(picGoal.Bounds) Then
             If DoorKey = 0 And picGoal.Enabled = True Then
                 Me.Close()
-                LevelSelect.Visible = True
-                level2.Visible = True
+                level3.Visible = True
             End If
         End If
-
     End Sub
 
 End Class
