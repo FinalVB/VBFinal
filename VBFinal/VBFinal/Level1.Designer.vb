@@ -27,9 +27,7 @@ Partial Class Level1
         Me.tmrUp = New System.Windows.Forms.Timer(Me.components)
         Me.tmrGravity = New System.Windows.Forms.Timer(Me.components)
         Me.tmrLeft = New System.Windows.Forms.Timer(Me.components)
-        Me.tmrCMA = New System.Windows.Forms.Timer(Me.components)
         Me.tmrGame = New System.Windows.Forms.Timer(Me.components)
-        Me.picPlayerLeft = New System.Windows.Forms.PictureBox()
         Me.picGoal = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.picLimitRight = New System.Windows.Forms.PictureBox()
@@ -51,7 +49,6 @@ Partial Class Level1
         Me.lblScore = New System.Windows.Forms.Label()
         Me.Coin1 = New System.Windows.Forms.PictureBox()
         Me.Coin2 = New System.Windows.Forms.PictureBox()
-        CType(Me.picPlayerLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picGoal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,17 +89,6 @@ Partial Class Level1
         '
         Me.tmrGame.Interval = 20
         '
-        'picPlayerLeft
-        '
-        Me.picPlayerLeft.Image = Global.VBFinal.My.Resources.Resources.Characters_left
-        Me.picPlayerLeft.Location = New System.Drawing.Point(25, 317)
-        Me.picPlayerLeft.Name = "picPlayerLeft"
-        Me.picPlayerLeft.Size = New System.Drawing.Size(36, 37)
-        Me.picPlayerLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPlayerLeft.TabIndex = 28
-        Me.picPlayerLeft.TabStop = False
-        Me.picPlayerLeft.Visible = False
-        '
         'picGoal
         '
         Me.picGoal.Enabled = False
@@ -129,7 +115,7 @@ Partial Class Level1
         'picLimitRight
         '
         Me.picLimitRight.BackColor = System.Drawing.Color.Transparent
-        Me.picLimitRight.Location = New System.Drawing.Point(716, -6)
+        Me.picLimitRight.Location = New System.Drawing.Point(716, -22)
         Me.picLimitRight.Name = "picLimitRight"
         Me.picLimitRight.Size = New System.Drawing.Size(10, 493)
         Me.picLimitRight.TabIndex = 23
@@ -159,7 +145,7 @@ Partial Class Level1
         'picPlayer
         '
         Me.picPlayer.Image = Global.VBFinal.My.Resources.Resources.Characters
-        Me.picPlayer.Location = New System.Drawing.Point(25, 317)
+        Me.picPlayer.Location = New System.Drawing.Point(23, 317)
         Me.picPlayer.Name = "picPlayer"
         Me.picPlayer.Size = New System.Drawing.Size(36, 37)
         Me.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -339,7 +325,6 @@ Partial Class Level1
         Me.Controls.Add(Me.Coin2)
         Me.Controls.Add(Me.Coin1)
         Me.Controls.Add(Me.lblScore)
-        Me.Controls.Add(Me.picPlayerLeft)
         Me.Controls.Add(Me.picGoal)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Coin0)
@@ -359,7 +344,6 @@ Partial Class Level1
         Me.Controls.Add(Me.picLimitLeft)
         Me.Name = "Level1"
         Me.Text = "Level1"
-        CType(Me.picPlayerLeft, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picGoal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).EndInit()
@@ -404,10 +388,8 @@ Partial Class Level1
     Friend WithEvents picGround As System.Windows.Forms.PictureBox
     Friend WithEvents picLimitLeft As System.Windows.Forms.PictureBox
     Friend WithEvents picLimitRight As System.Windows.Forms.PictureBox
-    Friend WithEvents tmrCMA As System.Windows.Forms.Timer
     Friend WithEvents tmrGame As System.Windows.Forms.Timer
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents picPlayerLeft As System.Windows.Forms.PictureBox
     Friend WithEvents lblScore As System.Windows.Forms.Label
     Friend WithEvents Coin1 As System.Windows.Forms.PictureBox
     Friend WithEvents Coin2 As System.Windows.Forms.PictureBox
