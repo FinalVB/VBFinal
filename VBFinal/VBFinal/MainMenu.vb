@@ -17,7 +17,16 @@
             btnStart.Visible = True
             btnExit.Visible = True
             lblName.Visible = True
+            picLogo2.Visible = True
+
         End If
+    End Sub
+
+    Private Sub MainMenu_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                Me.Close()
+        End Select
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

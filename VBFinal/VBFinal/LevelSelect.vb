@@ -9,6 +9,13 @@
         Dim Box As New Level1
         Box.Show()
         Me.Close()
+    End Sub
 
+    Private Sub LevelSelect_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyCode
+            Case Keys.Escape
+                Me.Close()
+                MainMenu.Visible = True
+        End Select
     End Sub
 End Class

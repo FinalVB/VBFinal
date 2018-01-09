@@ -1,30 +1,9 @@
 ﻿Public Class Level1
-
     Dim Velocity As Integer = 20
     Dim Gravity As Integer = 10
     Dim Jumping As Boolean
-
-    Private Sub Level_1_Load(sender As Object, e As EventArgs) Handles Me.Load 'Game logic timer
-        tmrGame.Start()
-    End Sub
-
-    Private Sub tmrGravity_Tick(sender As Object, e As EventArgs) Handles tmrGravity.Tick 'Gravity timer
-        picPlayer.Top += Gravity
-    End Sub
-
-    ' Private Sub tmrCMA_Tick(sender As Object, e As EventArgs) Handles tmrCMA.Tick 'Animation timer
-
-    '       If picPlayer.Visible = True Then 'Move Right Animation
-    '        picPlayer.Visible = False
-    '           picCMRW.Visible = True
-    '      ElseIf picCMRW.Visible = True Then 'Standing still 
-    '          picCMRW.Visible = False
-    '         picPlayer.Visible = True
-    '     End If
-    '  End Sub
-    Private Sub tmrUp_Tick(sender As Object, e As EventArgs) Handles tmrUp.Tick 'Jump timer
-        picPlayer.Top -= 20
-    End Sub
+    Dim Score As Integer
+    Dim DoorKey As Integer
 
     Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick 'Move Right timer
         picPlayer.Left += Velocity
@@ -34,17 +13,60 @@
         picPlayer.Left -= Velocity
     End Sub
 
-    Private Sub tmrGameLogic_Tick(sender As Object, e As EventArgs) Handles tmrGame.Tick
-        If picPlayer.Bounds.IntersectsWith(picAir.Bounds) Then
+    Private Sub Level1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown 'Keys to move
+        Select Case e.KeyCode
+            Case Keys.Right
+                tmrRight.Start()
+                picPlayer.Image = My.Resources.Characters
+            Case Keys.Left
+                tmrLeft.Start()
+                picPlayer.Image = My.Resources.Characters_left
+            Case Keys.Up
+                tmrUp.Start()
+                Jumping = True
+            Case Keys.Escape
+                Me.Close()
+                LevelSelect.Visible = True
+        End Select
+    End Sub
+
+
+    Private Sub Level1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp 'Keys to stop moveing
+        Select Case e.KeyCode
+            Case Keys.Right
+                tmrRight.Stop()
+            Case Keys.Left
+                tmrLeft.Stop()
+            Case Keys.Up
+                tmrUp.Stop()
+                Jumping = False
+        End Select
+    End Sub
+
+    Private Sub tmrUp_Tick(sender As Object, e As EventArgs) Handles tmrUp.Tick 'Jump timer
+        picPlayer.Top -= 30
+    End Sub
+
+    Private Sub tmrGravity_Tick(sender As Object, e As EventArgs) Handles tmrGravity.Tick 'Gravity timer
+        picPlayer.Top += Gravity
+    End Sub
+
+    Private Sub Level_1_Load(sender As Object, e As EventArgs) Handles Me.Load 'Game logic timer
+        tmrGame.Start()
+    End Sub
+
+
+    Private Sub tmrGameLogic_Tick(sender As Object, e As EventArgs) Handles tmrGame.Tick 'Controls the game logic
+        If picPlayer.Bounds.IntersectsWith(picAir.Bounds) Then 'Gravity
             tmrGravity.Start()
-            'If isJumping = False Then
-            'tmrGravity.Start()
-            'End If
+            If Jumping = False Then
+                tmrGravity.Start()
+            End If
         ElseIf picPlayer.Bounds.IntersectsWith(picGround.Bounds) Then
             tmrGravity.Stop()
         End If
 
-        For Each plat As Control In Me.Controls
+        For Each plat As Control In Me.Controls 'Able to walk on platforms
             If TypeOf plat Is PictureBox Then
                 If plat.Tag = "platform" Then
                     If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
@@ -54,62 +76,69 @@
             End If
         Next
 
-        ' Map Boundary
-        ' Right
-        For Each limit As Control In Me.Controls
-            If TypeOf limit Is PictureBox Then
-                If limit.Tag = "limitedRight" Then
-                    If picPlayer.Bounds.IntersectsWith(limit.Bounds) Then
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "ground" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
+                        tmrGravity.Stop()
+                    End If
+                End If
+            End If
+        Next
+
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "LimitRight" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
                         tmrRight.Stop()
                     End If
                 End If
             End If
         Next
 
-        For Each limit As Control In Me.Controls
-            If TypeOf limit Is PictureBox Then
-                If limit.Tag = "limitedLeft" Then
-                    If picPlayer.Bounds.IntersectsWith(limit.Bounds) Then
-                        tmrRight.Stop()
+        For Each plat As Control In Me.Controls
+            If TypeOf plat Is PictureBox Then
+                If plat.Tag = "LimitLeft" Then
+                    If picPlayer.Bounds.IntersectsWith(plat.Bounds) Then
+                        tmrLeft.Stop()
                     End If
                 End If
             End If
         Next
+
+
+        Dim Coins() = {Coin0, Coin1, Coin2}
+        Dim x As Integer
+        DoorKey = 0
+
+
+        For x = 0 To 2
+            If picPlayer.Bounds.IntersectsWith(Coins(x).Bounds) Then
+                If Coins(x).Enabled = True Then
+                    Score = Score + 1
+                    lblScore.Text = Score.ToString
+                End If
+                Coins(x).Hide()
+                Coins(x).Enabled = False
+            End If
+        Next
+
+
+        If picPlayer.Bounds.IntersectsWith(picKey.Bounds) Then
+            picGoal.Visible = True
+            picGoal.Enabled = True
+            picKey.Hide()
+            picKey.Enabled = False
+        End If
+
+        If picPlayer.Bounds.IntersectsWith(picGoal.Bounds) Then
+            If DoorKey = 0 And picGoal.Enabled = True Then
+                Me.Close()
+                LevelSelect.Visible = True
+                level2.Visible = True
+            End If
+        End If
+
     End Sub
 
-    Private Sub Level_1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown 'Key Down 
-        Select Case e.KeyCode
-            Case Keys.D
-                tmrRight.Start()
-                'tmrCMA.Start()
-            Case Keys.A
-                tmrLeft.Start()
-                ' tmrCMA.Start()
-            Case Keys.W
-                tmrUp.Start()
-                ' tmrCMA.Start()
-                Jumping = True
-        End Select
-    End Sub
-
-    Private Sub Level_1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp 'Key Up
-        Select Case e.KeyCode
-            Case Keys.D
-                tmrRight.Stop()
-                ' tmrCMA.Stop()
-            Case Keys.A
-                tmrLeft.Stop()
-                ' tmrCMA.Stop()
-            Case Keys.W
-                tmrUp.Stop()
-                '  tmrCMA.Stop()
-                Jumping = False
-        End Select
-    End Sub
-
-    Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
-        Me.Close()
-        Dim Box As New LevelSelect
-        Box.Show()
-    End Sub
 End Class

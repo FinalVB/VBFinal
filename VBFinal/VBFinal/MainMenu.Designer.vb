@@ -29,7 +29,9 @@ Partial Class MainMenu
         Me.btnExit = New System.Windows.Forms.Button()
         Me.picTurtleGames = New System.Windows.Forms.PictureBox()
         Me.lblName = New System.Windows.Forms.Label()
+        Me.picLogo2 = New System.Windows.Forms.PictureBox()
         CType(Me.picTurtleGames, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogo2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTurtleGames
@@ -86,11 +88,24 @@ Partial Class MainMenu
         Me.lblName.Text = "Simple Platform"
         Me.lblName.Visible = False
         '
+        'picLogo2
+        '
+        Me.picLogo2.Image = Global.VBFinal.My.Resources.Resources.TurtleGames
+        Me.picLogo2.Location = New System.Drawing.Point(339, 262)
+        Me.picLogo2.Name = "picLogo2"
+        Me.picLogo2.Size = New System.Drawing.Size(78, 71)
+        Me.picLogo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLogo2.TabIndex = 5
+        Me.picLogo2.TabStop = False
+        Me.picLogo2.Visible = False
+        '
         'MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(253, Byte), Integer), CType(CType(201, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(429, 345)
+        Me.Controls.Add(Me.picLogo2)
         Me.Controls.Add(Me.lblName)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnStart)
@@ -99,6 +114,7 @@ Partial Class MainMenu
         Me.Name = "MainMenu"
         Me.Text = "MainMenu"
         CType(Me.picTurtleGames, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogo2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -109,5 +125,6 @@ Partial Class MainMenu
     Friend WithEvents btnStart As System.Windows.Forms.Button
     Friend WithEvents btnExit As System.Windows.Forms.Button
     Friend WithEvents lblName As System.Windows.Forms.Label
+    Friend WithEvents picLogo2 As System.Windows.Forms.PictureBox
 
 End Class
