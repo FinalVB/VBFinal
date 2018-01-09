@@ -22,9 +22,9 @@ Partial Class level2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox23 = New System.Windows.Forms.PictureBox()
+        Me.picCoin0 = New System.Windows.Forms.PictureBox()
         Me.PictureBox22 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
+        Me.picCoin1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox20 = New System.Windows.Forms.PictureBox()
         Me.PictureBox19 = New System.Windows.Forms.PictureBox()
         Me.PictureBox18 = New System.Windows.Forms.PictureBox()
@@ -46,9 +46,9 @@ Partial Class level2
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox24 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCoin0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picCoin1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,15 +72,15 @@ Partial Class level2
         CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PictureBox23
+        'picCoin0
         '
-        Me.PictureBox23.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox23.Location = New System.Drawing.Point(309, 223)
-        Me.PictureBox23.Name = "PictureBox23"
-        Me.PictureBox23.Size = New System.Drawing.Size(29, 31)
-        Me.PictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox23.TabIndex = 25
-        Me.PictureBox23.TabStop = False
+        Me.picCoin0.Image = Global.VBFinal.My.Resources.Resources.coin_point
+        Me.picCoin0.Location = New System.Drawing.Point(309, 223)
+        Me.picCoin0.Name = "picCoin0"
+        Me.picCoin0.Size = New System.Drawing.Size(29, 31)
+        Me.picCoin0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCoin0.TabIndex = 25
+        Me.picCoin0.TabStop = False
         '
         'PictureBox22
         '
@@ -92,15 +92,15 @@ Partial Class level2
         Me.PictureBox22.TabIndex = 24
         Me.PictureBox22.TabStop = False
         '
-        'PictureBox21
+        'picCoin1
         '
-        Me.PictureBox21.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox21.Location = New System.Drawing.Point(841, 178)
-        Me.PictureBox21.Name = "PictureBox21"
-        Me.PictureBox21.Size = New System.Drawing.Size(29, 31)
-        Me.PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox21.TabIndex = 23
-        Me.PictureBox21.TabStop = False
+        Me.picCoin1.Image = Global.VBFinal.My.Resources.Resources.coin_point
+        Me.picCoin1.Location = New System.Drawing.Point(841, 178)
+        Me.picCoin1.Name = "picCoin1"
+        Me.picCoin1.Size = New System.Drawing.Size(29, 31)
+        Me.picCoin1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCoin1.TabIndex = 23
+        Me.picCoin1.TabStop = False
         '
         'PictureBox20
         '
@@ -318,9 +318,9 @@ Partial Class level2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(904, 463)
         Me.Controls.Add(Me.PictureBox24)
-        Me.Controls.Add(Me.PictureBox23)
+        Me.Controls.Add(Me.picCoin0)
         Me.Controls.Add(Me.PictureBox22)
-        Me.Controls.Add(Me.PictureBox21)
+        Me.Controls.Add(Me.picCoin1)
         Me.Controls.Add(Me.PictureBox20)
         Me.Controls.Add(Me.PictureBox19)
         Me.Controls.Add(Me.PictureBox18)
@@ -343,9 +343,9 @@ Partial Class level2
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "level2"
         Me.Text = "level2"
-        CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCoin0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picCoin1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
@@ -389,9 +389,9 @@ Partial Class level2
     Friend WithEvents PictureBox18 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox19 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox20 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox21 As System.Windows.Forms.PictureBox
+    Friend WithEvents picCoin1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox22 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox23 As System.Windows.Forms.PictureBox
+    Friend WithEvents picCoin0 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox24 As System.Windows.Forms.PictureBox
 End Class

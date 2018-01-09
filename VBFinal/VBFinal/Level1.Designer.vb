@@ -101,9 +101,11 @@ Partial Class Level1
         Me.picPlayerLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picPlayerLeft.TabIndex = 28
         Me.picPlayerLeft.TabStop = False
+        Me.picPlayerLeft.Visible = False
         '
         'picGoal
         '
+        Me.picGoal.Enabled = False
         Me.picGoal.Image = Global.VBFinal.My.Resources.Resources.plains_door
         Me.picGoal.Location = New System.Drawing.Point(36, 26)
         Me.picGoal.Name = "picGoal"
@@ -178,7 +180,7 @@ Partial Class Level1
         'picKey
         '
         Me.picKey.Image = Global.VBFinal.My.Resources.Resources.key_for_plains
-        Me.picKey.Location = New System.Drawing.Point(113, 142)
+        Me.picKey.Location = New System.Drawing.Point(58, 128)
         Me.picKey.Name = "picKey"
         Me.picKey.Size = New System.Drawing.Size(26, 50)
         Me.picKey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -243,7 +245,7 @@ Partial Class Level1
         'PictureBox6
         '
         Me.PictureBox6.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox6.Location = New System.Drawing.Point(74, 191)
+        Me.PictureBox6.Location = New System.Drawing.Point(14, 184)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(104, 24)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -297,19 +299,19 @@ Partial Class Level1
         '
         'lblScore
         '
-        Me.lblScore.BackColor = System.Drawing.Color.Teal
+        Me.lblScore.BackColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.lblScore.Font = New System.Drawing.Font("Viner Hand ITC", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblScore.ForeColor = System.Drawing.Color.Yellow
-        Me.lblScore.Location = New System.Drawing.Point(733, 9)
+        Me.lblScore.Location = New System.Drawing.Point(716, -4)
         Me.lblScore.Name = "lblScore"
-        Me.lblScore.Size = New System.Drawing.Size(35, 46)
+        Me.lblScore.Size = New System.Drawing.Size(65, 59)
         Me.lblScore.TabIndex = 29
         Me.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Coin1
         '
         Me.Coin1.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.Coin1.Location = New System.Drawing.Point(665, 178)
+        Me.Coin1.Location = New System.Drawing.Point(665, 329)
         Me.Coin1.Name = "Coin1"
         Me.Coin1.Size = New System.Drawing.Size(33, 25)
         Me.Coin1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
