@@ -1,6 +1,6 @@
 # VBFinal
 
-#SimplePlatform
+# SimplePlatform
 
 This is a platformer game.Levels will get harder the further you go.You collect coins for points and key do got to the next level by entering the door.There are 3 levels to collect all coins the keys.3 coins per-level.
 
