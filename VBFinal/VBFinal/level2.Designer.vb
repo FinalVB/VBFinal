@@ -137,6 +137,7 @@ Partial Class level2
         Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox19.TabIndex = 21
         Me.PictureBox19.TabStop = False
+        Me.PictureBox19.Tag = "spikes"
         '
         'PictureBox18
         '
@@ -147,6 +148,7 @@ Partial Class level2
         Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox18.TabIndex = 20
         Me.PictureBox18.TabStop = False
+        Me.PictureBox18.Tag = "spikes"
         '
         'picKey
         '
