@@ -25,10 +25,8 @@ Partial Class LevelSelect
         Me.btnLevel1 = New System.Windows.Forms.Button()
         Me.btnLevel2 = New System.Windows.Forms.Button()
         Me.btnLevel3 = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btnMainMenu = New System.Windows.Forms.Button()
         Me.lblCoinP = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnLevel1
@@ -58,16 +56,6 @@ Partial Class LevelSelect
         Me.btnLevel3.Text = "Level 3"
         Me.btnLevel3.UseVisualStyleBackColor = True
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.PictureBox1.Location = New System.Drawing.Point(256, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(37, 30)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 11
-        Me.PictureBox1.TabStop = False
-        '
         'btnMainMenu
         '
         Me.btnMainMenu.Location = New System.Drawing.Point(123, 174)
@@ -79,35 +67,31 @@ Partial Class LevelSelect
         '
         'lblCoinP
         '
-        Me.lblCoinP.AutoSize = True
         Me.lblCoinP.Font = New System.Drawing.Font("Tempus Sans ITC", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCoinP.Location = New System.Drawing.Point(286, 9)
+        Me.lblCoinP.Location = New System.Drawing.Point(278, 9)
         Me.lblCoinP.Name = "lblCoinP"
-        Me.lblCoinP.Size = New System.Drawing.Size(0, 27)
+        Me.lblCoinP.Size = New System.Drawing.Size(53, 45)
         Me.lblCoinP.TabIndex = 13
         '
         'LevelSelect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(253, Byte), Integer), CType(CType(201, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(343, 227)
         Me.Controls.Add(Me.lblCoinP)
         Me.Controls.Add(Me.btnMainMenu)
-        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLevel3)
         Me.Controls.Add(Me.btnLevel2)
         Me.Controls.Add(Me.btnLevel1)
         Me.Name = "LevelSelect"
         Me.Text = "LevelSelect"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnLevel1 As System.Windows.Forms.Button
     Friend WithEvents btnLevel2 As System.Windows.Forms.Button
     Friend WithEvents btnLevel3 As System.Windows.Forms.Button
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents btnMainMenu As System.Windows.Forms.Button
     Friend WithEvents lblCoinP As System.Windows.Forms.Label
 End Class

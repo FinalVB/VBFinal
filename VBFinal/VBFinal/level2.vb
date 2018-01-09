@@ -5,6 +5,7 @@
     Dim Score As Integer
     Dim DoorKey As Integer
 
+
     Private Sub tmrRight_Tick(sender As Object, e As EventArgs) Handles tmrRight.Tick     'Move Right timer
         picPlayer.Left += Velocity
     End Sub
@@ -112,6 +113,8 @@
         DoorKey = 0
 
 
+
+
         For x = 0 To 2
             If picPlayer.Bounds.IntersectsWith(Coins(x).Bounds) Then
                 If Coins(x).Enabled = True Then
@@ -137,6 +140,29 @@
                 level3.Visible = True
             End If
         End If
+
+        For Each spikes As Control In Me.Controls
+            If TypeOf spikes Is PictureBox Then
+                If spikes.Tag = "spikes" Then
+                    If picPlayer.Bounds.IntersectsWith(spikes.Bounds) Then
+                        Score = 0
+                        lblScore.Text = Score.ToString
+                        picPlayer.Location = New Point(104, 284)
+                        Coin0.Enabled = True
+                        Coin0.Visible = True
+                        Coin1.Enabled = True
+                        Coin1.Visible = True
+                        Coin2.Enabled = True
+                        Coin2.Visible = True
+                        picKey.Enabled = True
+                        picKey.Visible = True
+                        picGoal.Enabled = False
+                        picGoal.Visible = False
+                    End If
+                End If
+            End If
+        Next
+
     End Sub
 
 End Class

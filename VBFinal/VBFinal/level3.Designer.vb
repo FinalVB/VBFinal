@@ -22,6 +22,7 @@ Partial Class level3
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.picAir = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.picSpikes0 = New System.Windows.Forms.PictureBox()
@@ -43,6 +44,15 @@ Partial Class level3
         Me.picGoal = New System.Windows.Forms.PictureBox()
         Me.picKey = New System.Windows.Forms.PictureBox()
         Me.picPlayer = New System.Windows.Forms.PictureBox()
+        Me.tmrRight = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrUp = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrGravity = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrLeft = New System.Windows.Forms.Timer(Me.components)
+        Me.tmrGame = New System.Windows.Forms.Timer(Me.components)
+        Me.lblScore = New System.Windows.Forms.Label()
+        Me.picGround = New System.Windows.Forms.PictureBox()
+        Me.picLimitLeft = New System.Windows.Forms.PictureBox()
+        Me.picLimitRight = New System.Windows.Forms.PictureBox()
         CType(Me.picAir, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picSpikes0, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,6 +74,9 @@ Partial Class level3
         CType(Me.picGoal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picKey, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picGround, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLimitLeft, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'picAir
@@ -96,6 +109,7 @@ Partial Class level3
         Me.picSpikes0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picSpikes0.TabIndex = 2
         Me.picSpikes0.TabStop = False
+        Me.picSpikes0.Tag = "spikes"
         '
         'picSpikes4
         '
@@ -106,6 +120,7 @@ Partial Class level3
         Me.picSpikes4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picSpikes4.TabIndex = 5
         Me.picSpikes4.TabStop = False
+        Me.picSpikes4.Tag = "spikes"
         '
         'picSpikes3
         '
@@ -116,6 +131,7 @@ Partial Class level3
         Me.picSpikes3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picSpikes3.TabIndex = 6
         Me.picSpikes3.TabStop = False
+        Me.picSpikes3.Tag = "spikes"
         '
         'picSpikes2
         '
@@ -126,6 +142,7 @@ Partial Class level3
         Me.picSpikes2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picSpikes2.TabIndex = 7
         Me.picSpikes2.TabStop = False
+        Me.picSpikes2.Tag = "spikes"
         '
         'picSpikes1
         '
@@ -136,6 +153,7 @@ Partial Class level3
         Me.picSpikes1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picSpikes1.TabIndex = 8
         Me.picSpikes1.TabStop = False
+        Me.picSpikes1.Tag = "spikes"
         '
         'PictureBox4
         '
@@ -217,7 +235,7 @@ Partial Class level3
         'PictureBox15
         '
         Me.PictureBox15.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox15.Location = New System.Drawing.Point(663, 196)
+        Me.PictureBox15.Location = New System.Drawing.Point(702, 196)
         Me.PictureBox15.Name = "PictureBox15"
         Me.PictureBox15.Size = New System.Drawing.Size(100, 30)
         Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -238,7 +256,7 @@ Partial Class level3
         'Coin2
         '
         Me.Coin2.Image = Global.VBFinal.My.Resources.Resources.coin_point
-        Me.Coin2.Location = New System.Drawing.Point(702, 160)
+        Me.Coin2.Location = New System.Drawing.Point(719, 160)
         Me.Coin2.Name = "Coin2"
         Me.Coin2.Size = New System.Drawing.Size(33, 30)
         Me.Coin2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -257,13 +275,15 @@ Partial Class level3
         '
         'picGoal
         '
+        Me.picGoal.Enabled = False
         Me.picGoal.Image = Global.VBFinal.My.Resources.Resources.plains_door
-        Me.picGoal.Location = New System.Drawing.Point(853, 224)
+        Me.picGoal.Location = New System.Drawing.Point(837, 224)
         Me.picGoal.Name = "picGoal"
         Me.picGoal.Size = New System.Drawing.Size(71, 67)
         Me.picGoal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picGoal.TabIndex = 20
         Me.picGoal.TabStop = False
+        Me.picGoal.Visible = False
         '
         'picKey
         '
@@ -285,11 +305,71 @@ Partial Class level3
         Me.picPlayer.TabIndex = 22
         Me.picPlayer.TabStop = False
         '
+        'tmrRight
+        '
+        '
+        'tmrUp
+        '
+        Me.tmrUp.Interval = 90
+        '
+        'tmrGravity
+        '
+        Me.tmrGravity.Interval = 20
+        '
+        'tmrLeft
+        '
+        '
+        'tmrGame
+        '
+        Me.tmrGame.Interval = 20
+        '
+        'lblScore
+        '
+        Me.lblScore.BackColor = System.Drawing.Color.FromArgb(CType(CType(121, Byte), Integer), CType(CType(202, Byte), Integer), CType(CType(249, Byte), Integer))
+        Me.lblScore.Font = New System.Drawing.Font("Viner Hand ITC", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblScore.ForeColor = System.Drawing.Color.Yellow
+        Me.lblScore.Location = New System.Drawing.Point(859, 1)
+        Me.lblScore.Name = "lblScore"
+        Me.lblScore.Size = New System.Drawing.Size(65, 59)
+        Me.lblScore.TabIndex = 30
+        Me.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'picGround
+        '
+        Me.picGround.BackColor = System.Drawing.Color.Transparent
+        Me.picGround.Location = New System.Drawing.Point(2, 355)
+        Me.picGround.Name = "picGround"
+        Me.picGround.Size = New System.Drawing.Size(935, 11)
+        Me.picGround.TabIndex = 31
+        Me.picGround.TabStop = False
+        Me.picGround.Tag = "ground"
+        '
+        'picLimitLeft
+        '
+        Me.picLimitLeft.BackColor = System.Drawing.Color.Transparent
+        Me.picLimitLeft.Location = New System.Drawing.Point(2, -27)
+        Me.picLimitLeft.Name = "picLimitLeft"
+        Me.picLimitLeft.Size = New System.Drawing.Size(10, 475)
+        Me.picLimitLeft.TabIndex = 32
+        Me.picLimitLeft.TabStop = False
+        Me.picLimitLeft.Tag = "LimitLeft"
+        '
+        'picLimitRight
+        '
+        Me.picLimitRight.BackColor = System.Drawing.Color.Transparent
+        Me.picLimitRight.Location = New System.Drawing.Point(927, 1)
+        Me.picLimitRight.Name = "picLimitRight"
+        Me.picLimitRight.Size = New System.Drawing.Size(10, 493)
+        Me.picLimitRight.TabIndex = 33
+        Me.picLimitRight.TabStop = False
+        Me.picLimitRight.Tag = "LimitRight"
+        '
         'level3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(936, 460)
+        Me.Controls.Add(Me.lblScore)
         Me.Controls.Add(Me.picPlayer)
         Me.Controls.Add(Me.picKey)
         Me.Controls.Add(Me.picGoal)
@@ -311,7 +391,11 @@ Partial Class level3
         Me.Controls.Add(Me.picSpikes0)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.picAir)
+        Me.Controls.Add(Me.picGround)
+        Me.Controls.Add(Me.picLimitRight)
+        Me.Controls.Add(Me.picLimitLeft)
         Me.Name = "level3"
+        Me.Tag = "spikes"
         Me.Text = "level3"
         CType(Me.picAir, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -334,6 +418,9 @@ Partial Class level3
         CType(Me.picGoal, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picKey, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picGround, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLimitLeft, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -358,4 +445,13 @@ Partial Class level3
     Friend WithEvents picGoal As System.Windows.Forms.PictureBox
     Friend WithEvents picKey As System.Windows.Forms.PictureBox
     Friend WithEvents picPlayer As System.Windows.Forms.PictureBox
+    Friend WithEvents tmrRight As System.Windows.Forms.Timer
+    Friend WithEvents tmrUp As System.Windows.Forms.Timer
+    Friend WithEvents tmrGravity As System.Windows.Forms.Timer
+    Friend WithEvents tmrLeft As System.Windows.Forms.Timer
+    Friend WithEvents tmrGame As System.Windows.Forms.Timer
+    Friend WithEvents lblScore As System.Windows.Forms.Label
+    Friend WithEvents picGround As System.Windows.Forms.PictureBox
+    Friend WithEvents picLimitLeft As System.Windows.Forms.PictureBox
+    Friend WithEvents picLimitRight As System.Windows.Forms.PictureBox
 End Class

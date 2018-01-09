@@ -17,17 +17,20 @@
         Dim Box As New Level1
         Box.Show()
         Me.Close()
+        MainMenu.Visible = False
     End Sub
 
     Private Sub btnLevel2_Click(sender As Object, e As EventArgs) Handles btnLevel2.Click
         Dim Box As New level2
         Box.Show()
         Me.Close()
+        MainMenu.Visible = False
     End Sub
 
     Private Sub btnLevel3_Click(sender As Object, e As EventArgs) Handles btnLevel3.Click
         Dim Box As New level3
         Box.Show()
         Me.Close()
+        MainMenu.Visible = False
     End Sub
 End Class
