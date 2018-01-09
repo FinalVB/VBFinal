@@ -15,3 +15,7 @@ Visual Studio 2013
 Adam Burton - Level Design
 
 Andrew McKenzie - Coder
+
+##License
+
+GNU General Public License v3.0
