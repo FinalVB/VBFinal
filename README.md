@@ -16,6 +16,6 @@ Adam Burton - Level Design
 
 Andrew McKenzie - Coder
 
-##License
+## License
 
 GNU General Public License v3.0
