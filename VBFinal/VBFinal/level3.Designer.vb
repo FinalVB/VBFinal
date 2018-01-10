@@ -175,9 +175,9 @@ Partial Class level3
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.VBFinal.My.Resources.Resources.platform
-        Me.PictureBox5.Location = New System.Drawing.Point(284, 291)
+        Me.PictureBox5.Location = New System.Drawing.Point(273, 291)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(110, 30)
+        Me.PictureBox5.Size = New System.Drawing.Size(121, 30)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 10
         Me.PictureBox5.TabStop = False
@@ -373,7 +373,7 @@ Partial Class level3
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.VBFinal.My.Resources.Resources.spike
-        Me.PictureBox1.Location = New System.Drawing.Point(321, 291)
+        Me.PictureBox1.Location = New System.Drawing.Point(316, 291)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(43, 13)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
