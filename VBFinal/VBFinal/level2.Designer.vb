@@ -59,6 +59,7 @@ Partial Class level2
         Me.picSpikes3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
         CType(Me.Coin0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picGoal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Coin1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,6 +90,7 @@ Partial Class level2
         CType(Me.picSpikes3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Coin0
@@ -442,6 +444,16 @@ Partial Class level2
         Me.PictureBox17.TabStop = False
         Me.PictureBox17.Tag = "spikes"
         '
+        'PictureBox21
+        '
+        Me.PictureBox21.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox21.Location = New System.Drawing.Point(86, -1)
+        Me.PictureBox21.Name = "PictureBox21"
+        Me.PictureBox21.Size = New System.Drawing.Size(18, 164)
+        Me.PictureBox21.TabIndex = 38
+        Me.PictureBox21.TabStop = False
+        Me.PictureBox21.Tag = "LimitRight"
+        '
         'level2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -475,9 +487,10 @@ Partial Class level2
         Me.Controls.Add(Me.PictureBox6)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.picAir)
-        Me.Controls.Add(Me.picLimitRight)
+        Me.Controls.Add(Me.PictureBox21)
         Me.Controls.Add(Me.picGround)
         Me.Controls.Add(Me.PictureBox16)
+        Me.Controls.Add(Me.picLimitRight)
         Me.Name = "level2"
         Me.Text = "level2"
         CType(Me.Coin0, System.ComponentModel.ISupportInitialize).EndInit()
@@ -510,6 +523,7 @@ Partial Class level2
         CType(Me.picSpikes3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -549,4 +563,5 @@ Partial Class level2
     Friend WithEvents picSpikes3 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox17 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox21 As System.Windows.Forms.PictureBox
 End Class
