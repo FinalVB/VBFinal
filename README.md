@@ -22,4 +22,4 @@ GNU General Public License v3.0
 
 <a href ="https://www.youtube.com/watch?v=WsH0Wqk1mBo">Vidoe here</a>
 
-<img src="Flowchart.jpg" alt="Flowchart">
+<img src="Flowchart.png" alt="Flowchart">
