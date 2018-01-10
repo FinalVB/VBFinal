@@ -56,6 +56,9 @@ Partial Class level2
         Me.tmrGravity = New System.Windows.Forms.Timer(Me.components)
         Me.tmrLeft = New System.Windows.Forms.Timer(Me.components)
         Me.tmrGame = New System.Windows.Forms.Timer(Me.components)
+        Me.picSpikes3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
         CType(Me.Coin0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picGoal, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Coin1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,6 +86,9 @@ Partial Class level2
         CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picSpikes3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Coin0
@@ -403,11 +409,47 @@ Partial Class level2
         '
         Me.tmrGame.Interval = 20
         '
+        'picSpikes3
+        '
+        Me.picSpikes3.Image = Global.VBFinal.My.Resources.Resources.spike
+        Me.picSpikes3.Location = New System.Drawing.Point(223, 319)
+        Me.picSpikes3.Name = "picSpikes3"
+        Me.picSpikes3.Size = New System.Drawing.Size(51, 10)
+        Me.picSpikes3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picSpikes3.TabIndex = 35
+        Me.picSpikes3.TabStop = False
+        Me.picSpikes3.Tag = "spikes"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.VBFinal.My.Resources.Resources.spike
+        Me.PictureBox1.Location = New System.Drawing.Point(336, 161)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(51, 10)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 36
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Tag = "spikes"
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.Image = Global.VBFinal.My.Resources.Resources.spike
+        Me.PictureBox17.Location = New System.Drawing.Point(477, 160)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(51, 11)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox17.TabIndex = 37
+        Me.PictureBox17.TabStop = False
+        Me.PictureBox17.Tag = "spikes"
+        '
         'level2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(904, 463)
+        Me.Controls.Add(Me.PictureBox17)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.picSpikes3)
         Me.Controls.Add(Me.picPlayer)
         Me.Controls.Add(Me.lblScore)
         Me.Controls.Add(Me.Coin0)
@@ -465,6 +507,9 @@ Partial Class level2
         CType(Me.picLimitRight, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPlayer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picSpikes3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -501,4 +546,7 @@ Partial Class level2
     Friend WithEvents tmrGravity As System.Windows.Forms.Timer
     Friend WithEvents tmrLeft As System.Windows.Forms.Timer
     Friend WithEvents tmrGame As System.Windows.Forms.Timer
+    Friend WithEvents picSpikes3 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox17 As System.Windows.Forms.PictureBox
 End Class
